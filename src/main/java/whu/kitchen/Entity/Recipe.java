@@ -33,8 +33,8 @@ public class Recipe {
     private int difficulty;
 
     //菜谱评分 非空 默认值为0
-    @Column(nullable = false, precision = 1)
-    private int score = 0;
+    @Column(nullable = false)
+    private double score = 0;
 
     //收藏人数 非空 默认值为0
     @Column(nullable = false)
@@ -101,11 +101,11 @@ public class Recipe {
         this.difficulty = difficulty;
     }
 
-    public int getScore() {
+    public double getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(double score) {
         this.score = score;
     }
 
