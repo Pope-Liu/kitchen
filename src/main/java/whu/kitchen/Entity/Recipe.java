@@ -14,23 +14,27 @@ public class Recipe {
 
     //菜谱名 非空
     @Column(nullable = false)
-    private String recipeName;
+    private String name;
+
+    //菜谱作者
+    @Column(nullable = false)
+    private String author = "系统";
 
     //菜谱材料 非空 （列表型字符串）
     @Column(nullable = false)
-    private String recipeMaterial;
+    private String material;
 
     //烹饪类型 非空
     @Column(nullable = false, precision = 1)
-    private int recipeType;
+    private int type;
 
     //菜谱困难度 非空
     @Column(nullable = false, precision = 1)
-    private int recipeDifficulty;
+    private int difficulty;
 
     //菜谱评分 非空 默认值为0
     @Column(nullable = false, precision = 1)
-    private int recipeScore = 0;
+    private int score = 0;
 
     //收藏人数 非空 默认值为0
     @Column(nullable = false)
@@ -53,48 +57,56 @@ public class Recipe {
         return Id;
     }
 
-    public void setId(int Id) {
-        this.Id = Id;
+    public void setId(int id) {
+        Id = id;
     }
 
-    public String getRecipeName() {
-        return recipeName;
+    public String getName() {
+        return name;
     }
 
-    public void setRecipeName(String recipeName) {
-        this.recipeName = recipeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getRecipeMaterial() {
-        return recipeMaterial;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setRecipeMaterial(String recipeMaterial) {
-        this.recipeMaterial = recipeMaterial;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public int getRecipeType() {
-        return recipeType;
+    public String getMaterial() {
+        return material;
     }
 
-    public void setRecipeType(int recipeType) {
-        this.recipeType = recipeType;
+    public void setMaterial(String material) {
+        this.material = material;
     }
 
-    public int getRecipeDifficulty() {
-        return recipeDifficulty;
+    public int getType() {
+        return type;
     }
 
-    public void setRecipeDifficulty(int recipeDifficulty) {
-        this.recipeDifficulty = recipeDifficulty;
+    public void setType(int type) {
+        this.type = type;
     }
 
-    public int getRecipeScore() {
-        return recipeScore;
+    public int getDifficulty() {
+        return difficulty;
     }
 
-    public void setRecipeScore(int recipeScore) {
-        this.recipeScore = recipeScore;
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public int getCollectionNumber() {

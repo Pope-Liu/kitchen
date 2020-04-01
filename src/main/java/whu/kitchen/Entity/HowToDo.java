@@ -65,4 +65,5 @@ public class HowToDo {
     public void setMediaUrl(String mediaUrl) {
         this.mediaUrl = mediaUrl;
     }
+
 }
