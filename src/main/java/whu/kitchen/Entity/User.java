@@ -15,7 +15,7 @@ public class User {
 
     //用户电话 注册用 非空 最大长度为11
     @Column(nullable = false, precision = 11)
-    private int tel;
+    private String tel;
 
     //用户昵称 非空 默认值为手机号 最大长度为16字节
     @Column(nullable = false, precision = 16)
@@ -43,11 +43,11 @@ public class User {
         this.Id = Id;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 
