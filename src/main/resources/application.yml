@@ -18,3 +18,12 @@ spring:
     hibernate:
       ddl-auto: update
 
+#  #配置静态资源映射
+#  mvc:
+#    static-path-pattern: "/media/**"
+#  resources:
+#    #填写实际路径
+#    static-locations: file:G:/
+
+
+

@@ -22,7 +22,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 //为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.template.controller"))
+                .apis(RequestHandlerSelectors.basePackage("whu.kitchen.Controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

@@ -7,15 +7,6 @@ public class ResultVo {
     private String msg;
     private Object data;
 
-    //查询数据失败
-    public final static ResultVo SELECT_ERROR = new ResultVo(1,"查询数据失败",null);
-    //更新数据失败
-    public final static ResultVo UPDATE_ERROR = new ResultVo(2,"更新数据失败",null);
-    //插入数据失败
-    public final static ResultVo INSERT_ERROR = new ResultVo(3,"插入数据失败",null);
-    //删除数据失败
-    public final static ResultVo DELETE_ERROR = new ResultVo(4,"删除数据失败",null);
-
     public ResultVo() {
     }
 
@@ -25,12 +16,29 @@ public class ResultVo {
         this.data = data;
     }
 
-    public static ResultVo SUCCESS(Object data){
-        ResultVo success = new ResultVo();
-        success.code = 0;
-        success.msg = "操作成功";
-        success.data = data;
-        return success;
+    public int getCode() {
+        return code;
     }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
 
 }

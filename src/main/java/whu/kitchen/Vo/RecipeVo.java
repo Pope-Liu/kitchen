@@ -1,66 +1,26 @@
 //Author:刘行
-package whu.kitchen.Entity;
+package whu.kitchen.Vo;
 
-import javax.persistence.*;
+import whu.kitchen.Entity.HowToDo;
+
 import java.util.List;
+import java.util.Map;
 
-@Entity
-public class Recipe {
-
-    //菜谱ID 主键 自增 与做法为一对多关系
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RecipeVo {
     private int Id;
-
-    //菜谱名 非空
-    @Column(nullable = false)
     private String name;
-
-    //菜谱封面
-    @Column(nullable = false)
     private String cover;
-
-    //菜谱作者
-    @Column(nullable = false)
-    private String author = "系统";
-
-    //菜谱时间
-    @Column(nullable = false)
+    private String author;
     private String time;
-
-    //菜谱材料 非空 （列表型字符串）
-    @Column(nullable = false)
-    private String material;
-
-    //烹饪类型 非空
-    @Column(nullable = false, precision = 1)
+    private Map<String, String> material;
     private int type;
-
-    //菜谱困难度 非空
-    @Column(nullable = false, precision = 1)
     private int difficulty;
+    private double score;
+    private int collectionNumber;
+    private int browseNumber;
+    private List<HowToDoVo> howToDoVoList;
 
-    //菜谱评分 非空 默认值为0
-    @Column(nullable = false)
-    private double score = 0;
-
-    //收藏人数 非空 默认值为0
-    @Column(nullable = false)
-    private int collectionNumber = 0;
-
-    //浏览数 非空 默认为0
-    @Column(nullable = false)
-    private int browseNumber = 0;
-
-    //菜的做法 菜谱与做法为一对多关系
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
-    private List<HowToDo> howToDoList;
-
-    //收藏 一道菜可以对应很多个用户的收藏记录 一对多
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
-    private List<Collections> collectionsList;
-
-    public Recipe() {
+    public RecipeVo() {
     }
 
     public int getId() {
@@ -103,11 +63,11 @@ public class Recipe {
         this.time = time;
     }
 
-    public String getMaterial() {
+    public Map<String, String> getMaterial() {
         return material;
     }
 
-    public void setMaterial(String material) {
+    public void setMaterial(Map<String, String> material) {
         this.material = material;
     }
 
@@ -149,5 +109,31 @@ public class Recipe {
 
     public void setBrowseNumber(int browseNumber) {
         this.browseNumber = browseNumber;
+    }
+
+    public List<HowToDoVo> getHowToDoVoList() {
+        return howToDoVoList;
+    }
+
+    public void setHowToDoVoList(List<HowToDoVo> howToDoVoList) {
+        this.howToDoVoList = howToDoVoList;
+    }
+
+    @Override
+    public String toString() {
+        return "RecipeVo{" +
+                "Id=" + Id +
+                ", name='" + name + '\'' +
+                ", cover='" + cover + '\'' +
+                ", author='" + author + '\'' +
+                ", time='" + time + '\'' +
+                ", material=" + material +
+                ", type=" + type +
+                ", difficulty=" + difficulty +
+                ", score=" + score +
+                ", collectionNumber=" + collectionNumber +
+                ", browseNumber=" + browseNumber +
+                ", howToDoVoList=" + howToDoVoList +
+                '}';
     }
 }
