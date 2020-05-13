@@ -6,7 +6,7 @@ import whu.kitchen.Entity.HowToDo;
 import java.util.List;
 import java.util.Map;
 
-public class RecipeVo {
+public class RecipeInfoVo {
     private int Id;
     private String name;
     private String cover;
@@ -20,7 +20,7 @@ public class RecipeVo {
     private int browseNumber;
     private List<HowToDoVo> howToDoVoList;
 
-    public RecipeVo() {
+    public RecipeInfoVo() {
     }
 
     public int getId() {

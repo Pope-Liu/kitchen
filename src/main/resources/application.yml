@@ -1,6 +1,12 @@
 server:
   port: 8081
 
+#文件路径
+filePath: G:/
+
+#静态资源访问路径
+staticPath: http://localhost:8081/media/
+
 spring:
   datasource:
     #数据库驱动
@@ -18,12 +24,14 @@ spring:
     hibernate:
       ddl-auto: update
 
-#  #配置静态资源映射
-#  mvc:
-#    static-path-pattern: "/media/**"
-#  resources:
-#    #填写实际路径
-#    static-locations: file:G:/
+  #配置静态资源映射
+  mvc:
+    static-path-pattern: "/media/**"
+  resources:
+    #填写实际路径
+    static-locations: file:${filePath}
+
+
 
 
 
